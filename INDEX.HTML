@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Usman CM - Accounting</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Usman CM - Accounting System</h1>
+
+<div class="box">
+  <h3>Add Customer</h3>
+  <input id="code" placeholder="Customer Code">
+  <input id="name" placeholder="Customer Name">
+  <button onclick="addCustomer()">Save Customer</button>
+</div>
+
+<div class="box">
+  <h3>Add Account Entry</h3>
+  <input id="limit" placeholder="Limit Bill">
+  <input id="bf" placeholder="BF Bill">
+  <button onclick="saveAccount()">Save Account</button>
+</div>
+
+<div class="box">
+  <h3>Add Payment</h3>
+  <select id="ptype">
+    <option value="jama">Jama (Received)</option>
+    <option value="naqad">Naqad Diye (Paid)</option>
+  </select>
+  <input id="amount" placeholder="Amount">
+  <input id="desc" placeholder="Description">
+  <button onclick="savePayment()">Save Payment</button>
+</div>
+
+<h3>Customer Records</h3>
+<div id="list"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
