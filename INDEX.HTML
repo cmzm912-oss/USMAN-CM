@@ -1,41 +1,62 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Usman CM - Accounting</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usman CM - Accounting Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1>Usman CM - Accounting Dashboard</h1>
+  </header>
 
-<h1>Usman CM - Accounting System</h1>
+  <section class="add-section">
+    <div class="box">
+      <h3>Add Customer</h3>
+      <input id="code" placeholder="Customer Code">
+      <input id="name" placeholder="Customer Name">
+      <button onclick="addCustomer()">Add Customer</button>
+    </div>
 
-<div class="box">
-  <h3>Add Customer</h3>
-  <input id="code" placeholder="Customer Code">
-  <input id="name" placeholder="Customer Name">
-  <button onclick="addCustomer()">Save Customer</button>
-</div>
+    <div class="box">
+      <h3>Add Account Entry</h3>
+      <input id="limit" placeholder="Limit Bill">
+      <input id="bf" placeholder="BF Bill">
+      <button onclick="saveAccount()">Add Account</button>
+    </div>
 
-<div class="box">
-  <h3>Add Account Entry</h3>
-  <input id="limit" placeholder="Limit Bill">
-  <input id="bf" placeholder="BF Bill">
-  <button onclick="saveAccount()">Save Account</button>
-</div>
+    <div class="box">
+      <h3>Add Payment</h3>
+      <select id="ptype">
+        <option value="jama">Jama (Received)</option>
+        <option value="naqad">Naqad Diye (Paid)</option>
+      </select>
+      <input id="amount" placeholder="Amount">
+      <input id="desc" placeholder="Description">
+      <button onclick="savePayment()">Add Payment</button>
+    </div>
+  </section>
 
-<div class="box">
-  <h3>Add Payment</h3>
-  <select id="ptype">
-    <option value="jama">Jama (Received)</option>
-    <option value="naqad">Naqad Diye (Paid)</option>
-  </select>
-  <input id="amount" placeholder="Amount">
-  <input id="desc" placeholder="Description">
-  <button onclick="savePayment()">Save Payment</button>
-</div>
+  <section class="table-section">
+    <h2>Customer Accounts</h2>
+    <table id="customerTable">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Limit Bill</th>
+          <th>BF Bill</th>
+          <th>Grand Total</th>
+          <th>Payments</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Dynamic rows will appear here -->
+      </tbody>
+    </table>
+  </section>
 
-<h3>Customer Records</h3>
-<div id="list"></div>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
